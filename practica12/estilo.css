@@ -1,0 +1,16 @@
+b/*colocar el codigo para reset valore*/
+
+body{background-color: #dddddd;}
+
+#container{
+    background-color: rgb(255, 255, 255);
+    margin: o auto;
+    width: 800px;
+    padding: 20px;
+}
+article{
+    padding-top: 20px;
+    column-count: 3;
+    column-gap: 20px;
+    column-rule: dotted 4px #cccccc;
+}
