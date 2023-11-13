@@ -474,7 +474,7 @@ footer{
                     <p><span class="punto"></span> Monitizacion</p>
                     <div class="barra-skill">
                         <div class="progreso">
-                            <span>60%</span>
+                            <span>70%</span>
                         </div>
                     </div>
 
@@ -500,3 +500,167 @@ footer{
         </div>
     </div>
 </section>
+
+  <!-- sección cursos -->
+  <section id="proyectos">
+    <div class="contenido">
+        <h2 class="titulo-seccion">Mis <span class="resaltado"> proyectos</span></h2>
+        <div class="fila">
+            <div class="col">
+                <h3 class="titulo-curso">
+                    PROYECTO <span class="resaltado">01</span>
+                </h3>
+                <div class="proyecto 1">
+                    <a href="Calculadora\index.html" target="_blank"> ver Calculadora</a>
+                </div>
+                <hr>
+            </div>
+            <div class="col">
+                <h3 class="titulo-curso">
+                    PROYECTO <span class="resaltado">02</span>
+                </h3>
+                <div class="proyrcto 2">
+                    <a href="5\index.html" target="_blank"> ver 5</a>
+                </div>
+                <hr>
+            </div>
+            
+            <div class="col">
+                <h3 class="titulo-curso">
+                    PROYECTO <span class="resaltado">03</span>
+                </h3>
+                <a href="practica 8\index.html" target="_blank"> ver practica 8</a>
+                <hr>
+            </div>
+
+        </div>
+        <div class="fila">
+            <div class="col">
+                <h3 class="titulo-curso">
+                    PROYECTO <span class="resaltado">04</span>
+                </h3> 
+                <a href="practica 9\index.html" target="_blank"> ver practica 9</a>
+                <hr>
+            </div>
+            <div class="col">
+                <h3 class="titulo-curso">
+                    PROYECTO <span class="resaltado">05</span>
+                </h3>
+                <a href="practica 11\index.html" target="_blank"> ver pracita 11</a>
+                <hr>
+            </div>
+            <div class="col">
+                <h3 class="titulo-curso">
+                    PROYECTO <span class="resaltado">06</span>
+                </h3>
+                <a href="practica12\index.html" target="_blank"> ver practica 12</a>
+                <hr>
+            </div>
+        
+
+        </div>
+    </div>
+</section>
+
+<!-- numeros -->
+<section id="numeros">
+    <div class="contenido">
+        <div class="fila">
+            <div class="col">
+                <span class="mas">+</span>
+                <div class="num" id="contProyectos">0</div>
+                <div class="texto">
+                    <strong>PROYECTOS</strong> <br>TERMINADOS
+                </div>
+            </div>
+        
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="contacto">
+    <img src="img/img2.jpg" width="450" height="550" class="img-subs">
+    <div class="contenido">
+        <form action="">
+            <h2 class="titulo-seccion">Contactame <br> <span class="resaltado subir"> ahora mismo</span></h2>
+            <p></p>
+            <input type="text" placeholder="Nombre">
+            <input type="text" placeholder="Email">
+            <textarea name="" id="" cols="30" rows="10" placeholder="Mensaje"></textarea>
+            <button class="btn-primary">Enviar</button>
+        </form>
+    </div>
+</section>
+
+<!-- footer -->
+<footer>
+        <div class="col3">
+            <h3 class="titulo-footer"> escribeme por mas informacion<br> </h3>
+            <input type="text" placeholder="mail">
+            <div class="redes">
+                <p>Seguime!</p>
+                <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-youtube"></i></a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script>
+    //Funcion que aplica las animaciones de las habilidades
+let proyectos = 0;
+let intervalProyectos = null;
+function animacionNumeros(){
+var numeros = document.getElementById("numeros");
+var distancia_numeros = window.innerHeight - numeros.getBoundingClientRect().top;
+if(distancia_numeros >= 200 && proyectos ==0){
+    intervalo = setInterval(actualizarContador, 60);
+}
+}
+
+
+function actualizarContador() {
+// Verificamos si hemos llegado a 50
+if (proyectos <= 100) {
+    // Mostramos el valor actual del contador en el elemento con id "contador"
+    document.getElementById("contProyectos").textContent = proyectos;
+    // Incrementamos el contador en 1
+    proyectos++;
+} else {
+    // Si hemos llegado a 50, detenemos el intervalo
+    clearInterval(intervalProyectos);
+}
+
+
+}
+//detecto el scrolling para aplicar la animacion de la barra de habilidades
+window.onscroll = function(){
+animacionNumeros();
+animacionesSkills();
+}
+let visible=false;
+
+function abrirCerrarMenu(){    
+if(visible==false){
+    document.getElementById("nav").className = "responsive";
+    visible = true;
+}else{
+    document.getElementById("nav").className = "";
+    visible = false;
+}
+}
+function animacionesSkills(){
+var skills = document.getElementById("sobremi");
+var distancia_skills = window.innerHeight - skills.getBoundingClientRect().top;
+if(distancia_skills >= 400){
+    document.getElementById("dw").className = " progreso dw";
+    document.getElementById("dg").className = " progreso dg";
+    document.getElementById("bd").className = " progreso bd";
+    document.getElementById("md").className = " progreso md";
+}
+}
+</script>
+</body>
+</html>
