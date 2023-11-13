@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Atkin Palacios Portafolio</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Krub:wght@300;400;500;600;700&family=Oswald:wght@200;300;400;500;600;700&display=swap');
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        html{
+            scroll-behavior: smooth;
+        }
+        body{
+            background-color: #3498db; /* Updated background color */
+            color: #ffffff; /* Updated text color */
+            font-family: 'Krub';
+        }
+        /* header */
+        header{
+            max-width: 1100px;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 30px 10px;
+            font-family: 'Oswald';
+            background-color: #2c3e50; /* Updated header background color */
+        }
+        header h1{
+            font-size: 18px;
+            display: flex;
+            align-items: center;
+        }
+        header h1 .cuadro{
+            display: block;
+            width: 15px;
+            height: 15px;
+            background-color: #ecf0f1; /* Updated color */
+            margin-right: 10px;
+        }
+        header nav ul{
+            display: flex;
+            list-style: none;
+        }
+        header nav ul li{
+            padding: 10px 0;
+            border-bottom: 3px solid transparent;
+            margin: 0 30px;
+        }
+        header nav ul li a{
+            text-decoration: none;
+            font-size: 17px;
+            color: #ffffff; /* Updated color */
+            text-transform: uppercase;
+        }
+        header nav ul li:hover{
+            border-bottom: 3px solid #ffffff; /* Updated color */
+        }
+        header button{
+            border: none;
+            padding: 3px 10px;
+            text-transform: uppercase;
+            cursor: pointer; 
+        }
+        /* sección inicio */
+        .contenido{
+            max-width: 1100px;
+            margin: auto;
+        }
+        #inicio .contenido .fila{
+            display: flex;
+        }
+        #inicio .contenido .fila .col{
+            width: 33%;
+            position: relative;
+        }
+        #inicio .contenido .fila .ui{
+            font-family: 'Krub';
+            font-size: 120px;
+            display: flex;
+            align-items: baseline;
+        }
+        #inicio .contenido .fila .ui .circulo{
+            display: block;
+            width: 30px;
+            height: 30px;
+            background-color: #27ae60; /* Updated color */
+            border-radius: 12px;
+        }
+        #inicio .contenido .fila .col .info{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 400px;
+        }
+
+        #inicio .contenido .fila .col .info h2{
+            width: fit-content;
+            font-size: 15px;
+            text-transform: uppercase;
+            letter-spacing: 2px;    
+        }
+        #inicio .contenido .fila .col .txt{
+            font-family: 'Krub';
+            font-weight: normal;
+            font-size: 43px;
+        }
+        .vertical{
+            top: 50%;
+            left: -10%;
+            position: absolute;
+            transform: scale(-1) translate(-50%, 50%);
+            writing-mode: vertical-lr;
+            letter-spacing: 5px;
+        }
+        .circulo-principal{
+            position: absolute;
+            width: 350px;
+            height: 350px;
+            border-radius: 50%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            z-index: -2;
+        }
+        #inicio .contenido .fila .col img{
+            display: block;
+            width: 250px;
+            margin-top: 150px;
+        }
+        #inicio .contenido .fila .derecha{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding-left: 30px;
+            font-family: 'Krub';
+        }
+        #inicio .contenido .fila .derecha h3{
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+        #inicio .contenido .fila .derecha p{
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+
+        .btn-primary{
+            display: inline-block;
+            width: fit-content;
+            background-color: #e74c3c; /* Updated color */
+            border: none;
+            cursor: pointer;
+            color: #fff;
+            padding: 7px 15px;
+            text-transform: uppercase;
+            font-family: 'Oswald';
+            transition: .3s;
+        }
+        .btn-primary:hover{
+            background-color: #c0392b; /* Updated color */
+        }
+        .btn-secondary{
+            display: inline-block;
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+            color: #fff;
+            padding: 7px 15px;
+            text-transform: uppercase;
+            font-family: 'Oswald';
+        }
+
+        /* sección sobre mi */
+        #sobremi{
+            padding: 50px 10px;
+            height: 90vh;
+        }
+        #sobremi .contenido .fila{
+            display: flex;
+            align-items: center;
+        }
+        #sobremi .contenido .fila .col{
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+        }
+        .titulo-seccion{
+            font-size: 61px;
+            margin-bottom: 20px;
+        }
+        .resaltado{
+            color: #0a85d1;
+            font-weight: normal;
+        }
+        #sobremi .contenido .fila .col > p{
+            font-size: 14px;
+            width: 350px;
+            margin-bottom: 30px;
+            font-weight: bold;
+        }
+        #sobremi .contenido .fila .col .skills{
+            margin: 20px 0;
+        }
+        #sobremi .contenido .fila .col .skills p{
+            margin-right: 40px;
+        }
+        #sobremi .contenido .fila .col .punto {
+            width: 10px;
+            height: 10px;
+            background-color: #a35ff9;
+            display: inline-block;
+            margin-right: 15px;
+        }
+        #sobremi .contenido .fila .col .barra-skill{
+            width: 80%;
+            height: 15px;
+            border: 1px solid #707070;
+            position: relative;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        #sobremi .contenido .fila .col .barra-skill span{
+            height: 100%;
+            background-color: #065253;
+            display: block;
+            border-radius: 5px;
+        }
+        #sobremi .contenido .fila .derecha{
+            width: 50%;
+            position: relative;
+        }
+        #sobremi .contenido .fila .derecha img{
+            display: block;
+            width: 80%;
+            border-radius: 10px;
+            margin-top: 50px;
+        }
+        #sobremi .contenido .fila .derecha img {
+            display: block;
+            width: 80%;
+            border-radius: 10px;
+            margin-top: 50px;
+        }
+
+        /* sección trabajos */
+        #trabajos{
+            padding: 50px 10px;
+            background-color: #f7f7f7;
+        }
+        #trabajos .contenido .fila .col{
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        #trabajos .contenido .fila .col .titulo-seccion{
+            font-size: 61px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        #trabajos .contenido .fila .col .lista-trabajos{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            align-items: center;
+        }
+        #trabajos .contenido .fila .col .lista-trabajos .trabajo{
+            margin: 20px;
+            width: 300px;
+            position: relative;
+        }
+        #trabajos .contenido .fila .col .lista-trabajos .trabajo img{
+            display: block;
+            width: 100%;
+            border-radius: 10px;
+        }
+        #trabajos .contenido .fila .col .lista-trabajos .trabajo .overlay{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(6, 82, 83, 0.8);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: .5s;
+            border-radius: 10px;
+        }
+        #trabajos .contenido .fila .col .lista-trabajos .trabajo:hover .overlay{
+            opacity: 1;
+        }
+        #trabajos .contenido .fila .col .lista-trabajos .trabajo .info{
+            text-align: center;
+            z-index: 1;
+            color: #fff;
+        }
+        #trabajos .contenido .fila .col .lista-trabajos .trabajo .info h4{
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+        #trabajos .contenido .fila .col .lista-trabajos .trabajo .info p{
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+        #trabajos .contenido .fila .col .lista-trabajos .trabajo .info a{
+            display: inline-block;
+            background-color: #065253;
+            color: #fff;
+            padding: 8px 15px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 14px;
+            transition: .3s;
+        }
+        #trabajos .contenido .fila .col .lista-trabajos .trabajo .info a:hover{
+            background-color: #000;
+        }
+        /* sección contacto */
+        #contacto{
+            padding: 50px 10px;
+            height: 90vh;
+        }
+        #contacto .contenido .fila .col{
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        #contacto .contenido .fila .col img{
+            display: block;
+            width: 80%;
+            margin-bottom: 50px;
+            border-radius: 10px;
+        }
+        #contacto .contenido .fila .col h3{
+            font-size: 45px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        #contacto .contenido .fila .col p{
+            font-size: 16px;
+            text-align: center;
+            margin-bottom: 30px;
+            width: 80%;
+        }
+        #contacto .contenido .fila .col form{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        #contacto .contenido .fila .col form label{
+            font-size: 16px;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+#contacto .contenido .fila .col form input,
+#contacto .contenido .fila .col form textarea{
+    width: 80%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #000;
+    border-radius: 5px;
+}
+#contacto .contenido .fila .col form button{
+    background-color: #065253;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+}
+#contacto .contenido .fila .derecha{
+    width: 50%;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+#contacto .contenido .fila .derecha img{
+    display: block;
+    width: 80%;
+    border-radius: 10px;
+    margin-top: 50px;
+}
+#contacto .contenido .fila .derecha img{
+    display: block;
+    width: 80%;
+    border-radius: 10px;
+    margin-top: 50px;
+}
+
+/* footer */
+footer{
+    background-color: #000;
+    color: #fff;
+    padding: 20px 10px;
+    text-align: center;
+}
+    </style>
+</head>
+<body>
+
+    <!-- header -->
+    <header>
+        <h1>
+            <span class="cuadro"></span>
+            Atkin Palacios
+        </h1>
+        <nav>
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#sobremi">Sobre Mí</a></li>
+                <li><a href="#trabajos">Trabajos</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+        <button class="btn-secondary">Descargar CV</button>
+    </header>
+
+   <!-- sección inicio -->
+<section id="inicio">
+    <div class="contenido">
+        <div class="fila">
+            <div class="col">
+                <div class="ui">
+                    <div class="circulo"></div>
+                    <div class="circulo"></div>
+                    <div class="circulo"></div>
+                    <div class="circulo"></div>
+                    <div class="circulo"></div>
+                </div>
+                <div class="info">
+                    <h2>Hola , soy Jayvond Palacios Avila</h2>
+                </div>
+            </div>
+            <div class="col">
+                <div class="circulo-principal anim1"></div>
+                <img src="img/img 3.jpg" alt="" class="anim2">
+            </div>
+            <div class="col derecha">
+                <h3>Enfocado en alcanzar mis metas</h3>
+                <p>Jayvond es mi segundo nombre, soy de Guanaja Islas de la Bahía, y soy estudiante del Instituto Adventista de Guanaja.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- sección sobre mi -->
+<section id="sobremi">
+    <div class="contenido">
+        <div class="fila">
+            <div class="col">
+                <h2 class="titulo-seccion">Mis intereses<span class="resaltado"> y Habilidades</span></h2>
+                <p>Me Gustaria ser Un antrpenour y un Carpintero. Mis habilidades:</p>
+
+                <div class="skills">
+                    <p><span class="punto"></span> Diseño Gráfico</p>
+                    <div class="barra-skill">
+                        <div class="progreso">
+                            <span>60%</span>
+                        </div>
+                    </div>
+
+                    <p><span class="punto"></span> Monitizacion</p>
+                    <div class="barra-skill">
+                        <div class="progreso">
+                            <span>60%</span>
+                        </div>
+                    </div>
+
+                    <p><span class="punto"></span> Deportes:Basket/ Footbal /Voley</p>
+                    <div class="barra-skill">
+                        <div class="progreso">
+                            <span>90%</span>
+                        </div>
+                    </div>
+
+                    <p><span class="punto"></span> Base de datos</p>
+                    <div class="barra-skill">
+                        <div class="progreso">
+                            <span>80%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="circulo-principal"></div>
+                <img src="img/Img 1.jpg" alt="">
+            </div>
+        </div>
+    </div>
+</section>
