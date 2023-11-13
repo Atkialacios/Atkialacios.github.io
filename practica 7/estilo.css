@@ -7,7 +7,7 @@
 }
 
 body{
-    background: antiquewhite;
+    background: rgb(159, 163, 231);
     font-family: 'open sans';
 }
 
@@ -26,12 +26,12 @@ body{
     width: 33%;
     height: 550px;
     margin: auto;
-    border: 1px solid #343434;
+    border: 1px solid #940f0f;
     border-radius: 4px;
     padding: 60px;
     text-align: center;
     flex-grow: 1;
-    color: #343759;
+    color: #31366e;
 }
  
 .tabla>h2{
